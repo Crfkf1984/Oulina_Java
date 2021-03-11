@@ -3,16 +3,23 @@ package s01;
 import java.sql.Array;
 import java.util.Arrays;
 
-public class Children {
+public class Children extends Human {
     public static void main(String[] args) {
         Children[] children = new Children[] {new Children("Petr", "Petrovich", 34),
                 new Children("Ivan", "Ivanov", 36)};
 
         for (Children children1: children) {
             System.out.println(children1);
+            children1.run();
         }
     }
-        private String nameBaby;
+
+    @Override
+    public void run() {
+        System.out.println(nameBaby + " run");
+    }
+
+    private String nameBaby;
         private String surname;
         private int age;
 

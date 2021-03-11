@@ -1,6 +1,6 @@
 package s01;
 
-public class Parent {
+public class Parent extends Human {
     private String nameParent;
     private String surName;
     private int age;
@@ -50,6 +50,12 @@ public class Parent {
 
         for ( Parent parent1: parent) {
             System.out.println(parent1);
+            parent1.eat();
         }
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(nameParent + " хочет есть");
     }
 }
