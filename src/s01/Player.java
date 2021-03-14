@@ -3,18 +3,17 @@ package s01;
 import java.util.List;
 
 public class Player {
-    Player player;
     private String nik;
     private int level;
     private Sex sex;
     private int costGold;
-    private List<Backpack>  backpack;
+    private List<Item>  backpack;
 
      Player(String nik){
        this.nik = nik;
     };
 
-    public Player createPlayer(String nik){
+    public static Player createPlayer(String nik){
         return new Player(nik);
     };
 
@@ -26,26 +25,16 @@ public class Player {
         this.costGold +=costGold;
     }
 
-    public void addBackpack(String item) {
+    public void addBackpack(Item item) {
 
-            backpack.add(Backpack.valueOf(item));
+            backpack.add(item);
     }
 
-    public void deleteBackpack(String item) {
+    public void deleteBackpack(Item item) {
        backpack.remove(item);
     }
-
-     enum Backpack{
-        PEN,
-        PAPER,
-        WATER,
-        EAT
-    }
-
-    enum Sex{
-        М,
-        МEN,
-        МENS
-    }
-
+}
+enum Sex{
+    М,
+    W
 }
