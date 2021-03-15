@@ -1,6 +1,6 @@
 package s01;
 
-public class Item {
+public abstract class Item {
     private String name;
     private String discripsion;
     private Player player = null;
@@ -14,9 +14,7 @@ public class Item {
         this.discripsion = discripsion;
     }
 
-    public static Item createItem(String name) {
-        return new Item(name);
-    }
+    public abstract Item createItem(String name);
 
     public String getName() {
         return name;
