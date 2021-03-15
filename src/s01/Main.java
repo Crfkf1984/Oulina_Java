@@ -1,23 +1,28 @@
 package s01;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    Player player = Player.createPlayer("Santa"); // TODO: 13.03.2021 Как к этому же игроку добавить хилок?
-    Armor armor = new Armor("Lite", "Black");
-    Armor armor1 = new Armor("Average", "Grey");
-    Armor armor2 = new Armor("Hard", "White");
-    Weapon weapon = new Weapon("Меч", "Простой");
-    Weapon weapon1 = new Weapon("Пика", "Резная");
-    Item item = Item.createItem("Book");
-    Item item1 = Item.createItem("Notebook");
-    Item item2 = Item.createItem("Shovel");
-    Item item3 = Item.createItem("Scrap");
-    Item item4 = Item.createItem("Pick");
-    Item item5 = Item.createItem("Rock");
-    Item item6 = Item.createItem("Stick");
-    Item item7 = Item.createItem("Broom");
-    Item item8 = Item.createItem("Knife");
-    Item item9 = Item.createItem("Saw");
-// TODO: 14.03.2021 не пойму как добавить в рюкзак, программа просит создать новый объект, а я хочу к player добавить
+    public static void main(String[] args) {
+        Player player = Player.createPlayer("Santa");
+        Armor armor = new Armor("Lite", "Black");
+        Armor armor1 = new Armor("Average", "Grey");
+        Armor armor2 = new Armor("Hard", "White");
+        Weapon weapon = new Weapon("Меч", "Простой");
+        Weapon weapon1 = new Weapon("Пика", "Резная");
+        List<Item> items = new ArrayList<>();
+        Item item = Item.createItem("Book");
+        items.add(Item.createItem("Notebook"));
+        items.add(Item.createItem("Shovel"));
+        items.add(Item.createItem("Scrap"));
+        items.add(Item.createItem("Pick"));
+        items.add( Item.createItem("Rock"));
+        items.add(Item.createItem("Stick"));
+        items.add( Item.createItem("Broom"));
+        items.add( Item.createItem("Knife"));
+        items.add( Item.createItem("Saw"));
+        player.addBackpack(item); // TODO: 15.03.2021 как добавить конкретные предметы
+    }
+
 }

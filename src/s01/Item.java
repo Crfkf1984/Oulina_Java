@@ -3,7 +3,7 @@ package s01;
 public class Item {
     private String name;
     private String discripsion;
-    Player player = null;
+    private Player player = null;
 
     public Item(String name) {
         this.name = name;
