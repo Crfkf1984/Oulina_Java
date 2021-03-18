@@ -1,38 +1,18 @@
 package s01;
 
-public class Item {
-    private String name;
-    private String discripsion;
-    private Player player = null;
-
-    public Item(String name) {
-        this.name = name;
-    }
-
-    public Item(String name, String discripsion) {
-        this.name = name;
-        this.discripsion = discripsion;
-    }
+public interface Item {
 
     public static Item createItem(String name) {
-        return new Item(name);
-    }
+        return null;
+    };
 
-    public String getName() {
-        return name;
-    }
+    public String getName();
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+    public void setPlayer(Player player);
 
-    public String getDiscripsion() {
-        return discripsion;
-    }
+    public String getDiscripsion();
 
-    public Player getPlayer() {
-        return player;
-    }
+    public Player getPlayer();
 }
 enum ClothesType{
     ЛЕГКАЯ, ТЯЖЕЛАЯ, МАГИЧЕСКАЯ

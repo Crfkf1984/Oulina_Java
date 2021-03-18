@@ -13,7 +13,7 @@ public class Main {
         Weapon weapon1 = new Weapon("Пика", "Резная");
         List<Item> items = new ArrayList<>();
         Item item = Item.createItem("Book");
-        items.add(Item.createItem("Notebook"));
+        items.add((Weapon)Item.createItem("Notebook"));
         items.add(Item.createItem("Shovel"));
         items.add(Item.createItem("Scrap"));
         items.add(Item.createItem("Pick"));
@@ -22,7 +22,7 @@ public class Main {
         items.add( Item.createItem("Broom"));
         items.add( Item.createItem("Knife"));
         items.add( Item.createItem("Saw"));
-        player.addBackpack(item); // TODO: 15.03.2021 как добавить конкретные предметы
+        player.addBackpack(item);
     }
 
 }
