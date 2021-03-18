@@ -54,12 +54,29 @@ public class Player {
         return race;
     }
 
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
+
     public void setLevel(int level) {
         this.level = level;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", sex=" + sex +
+                ", race=" + race +
+                '}';
     }
 }
 enum Sex{
