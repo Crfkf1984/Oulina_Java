@@ -15,6 +15,7 @@ public class Player {
 
      Player(String name){
        this.name = name;
+       this.level = 1;
     };
 
     public static Player createPlayer(String nik){

@@ -66,7 +66,6 @@ public class Main {
                 break;
         }
         player.setName(name);
-        //player.setRace(race); - вот тут!!!!!!!!!
         return player;
     }
 
