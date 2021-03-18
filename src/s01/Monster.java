@@ -5,9 +5,9 @@ public class Monster {
     private int level;
     private State state;
 
-    public Monster(String name, int level) {
+    public Monster(String name) {
         this.name = name;
-        this.level = level;
+        this.level = 1;
     }
 
     public String getName() {
@@ -32,5 +32,13 @@ public class Monster {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Monster{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                '}';
     }
 }

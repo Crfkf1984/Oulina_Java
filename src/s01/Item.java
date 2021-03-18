@@ -33,6 +33,13 @@ public class Item {
     public Player getPlayer() {
         return player;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
 enum ClothesType{
     ЛЕГКАЯ, ТЯЖЕЛАЯ, МАГИЧЕСКАЯ

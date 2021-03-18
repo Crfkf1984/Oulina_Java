@@ -3,8 +3,6 @@ package s01;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: 14.03.2021 Свитч кейс как найти перечисление 
-
 public class Player {
     private String name;
     private int level;
