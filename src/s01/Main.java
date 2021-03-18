@@ -17,11 +17,11 @@ public class Main {
         items.add(new Weapon("Shovel"));
         items.add(new Weapon("Scrap"));
         items.add(new Potion("Pick"));
-//        items.add( Item.createItem("Rock"));
-//        items.add(Item.createItem("Stick"));
-//        items.add( Item.createItem("Broom"));
-//        items.add( Item.createItem("Knife"));
-//        items.add( Item.createItem("Saw"));
+        items.add( new Potion("Rock"));
+        items.add(new Potion("Stick"));
+        items.add(new Armor("Broom"));
+        items.add( new Armor("Knife"));
+        items.add( new Weapon("Saw"));
         for (Item item12: items) {
             player.addBackpack(item12);
         }
