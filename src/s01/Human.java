@@ -11,10 +11,6 @@ public class Human {
     private String sellfon;
     private String email;
 
-    public Human(String sellfon) {
-        this.sellfon = sellfon;
-    }
-
     public Human(String name, LocalDate date, String adress, String sellfon, String email) {
         this.name = name;
         this.date = date;
@@ -22,37 +18,39 @@ public class Human {
         this.sellfon = sellfon;
         this.email = email;
     }
+
     public static void main(String[] args) {
 
         List<Human> list = new ArrayList<>();
-        list.add(new Human("Emilу",LocalDate.of(2001,01,01), "strit West", "89784561237,",
-                "12345@mail.ru" ));
-        list.add(new Human("Hannah",LocalDate.of(2020,02,02), "strit Manthatten", "89134561237,",
-                "15432@mail.ru" ));
-        list.add(new Human("Natalie",LocalDate.of(1999,03,03), "strit Backer", "89284561237,",
-                "ertu@mail.ru" ));
-        list.add(new Human("Sophia",LocalDate.of(1998,04,04), "strit Yoker", "89454561237,",
-                "yuiop@mail.ru" ));
-        list.add(new Human("Ella",LocalDate.of(1997,05,05), "strit Monko", "89234561237,",
-                "fghjk@mail.ru" ));
+        list.add(new Human("Emilу", LocalDate.of(2001, 1, 1), "strit West", "89784561237,",
+                "12345@mail.ru"));
+        list.add(new Human("Hannah", LocalDate.of(2020, 2, 2), "strit Manthatten", "89138978456,",
+                "15432@mail.ru"));
+        list.add(new Human("Natalie", LocalDate.of(1999, 3, 3), "strit Backer", "89284561237,",
+                "ertu@mail.ru"));
+        list.add(new Human("Sophia", LocalDate.of(1998, 4, 4), "strit Yoker", "89454561237,",
+                "yuiop@mail.ru"));
+        list.add(new Human("Ella", LocalDate.of(1997, 5, 5), "strit Monko", "89234561237,",
+                "fghjk@mail.ru"));
 
-        Iterator<Human>iterator = list.iterator();
+        Iterator<Human> iterator = list.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-
+        iterator = list.iterator();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите код города для поиска человека");
         String tel = scanner.nextLine();
-        if (iterator.hasNext()) {
-             Human res = iterator.next();
-             res.getSellfon().contains(tel);
-            System.out.println(iterator.next());
+        while (iterator.hasNext()) {
+            Human res = iterator.next();
+            if (  res.getSellfon().startsWith(tel)) {
+                System.out.println(res);
             }
-
         }
-        //iterator.forEachRemaining((list) -> System.out.println(list)); - не получается его
-        // здесь использовать, почему?
+
+    }
+    //iterator.forEachRemaining((list) -> System.out.println(list)); - не получается его
+    // здесь использовать, почему?
 
     public String getSellfon() {
         return sellfon;
