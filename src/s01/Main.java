@@ -13,9 +13,13 @@ public class Main {
         Iterator<Integer> iterator = h.iterator();
         while (iterator.hasNext()) {
             Integer res = iterator.next();
-            if (res >= 0) {
-                System.out.println(res);
+            if (res <= 0) {
+                iterator.remove();
             }
+        }
+        iterator = h.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
 }
