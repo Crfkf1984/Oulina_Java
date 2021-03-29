@@ -1,32 +1,27 @@
 package s01;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> list1 = new ArrayList<>();
-        list1.add(4);
-        list1.add(5);
-        list1.add(3);
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(4, 5, 3));
         List<Integer> list2 = new ArrayList<>();
         list2.add(4);
         list2.add(2);
         list2.add(8);
-        ListIterator<Integer> listIterator1 = list1.listIterator();
+        list2.add(7);
+        list2.add(5);
+        ListIterator<Integer> listIterator1;
         ListIterator<Integer> listIterator2 = list2.listIterator();
 
-        while (listIterator1.hasNext()) {
-            Integer res1 = listIterator1.next();
+
+        while (listIterator2.hasNext()) {
             Integer res2 = listIterator2.next();
-            if (!res1.equals(res2)) {
-                listIterator1.add(res2);
+            if (!list1.contains(res2)) {
+               list1.add(res2);
                 listIterator2.remove();
             }
         }
-
         listIterator1 = list1.listIterator();
         while (listIterator1.hasNext()) {
             Integer wer = listIterator1.next();
@@ -36,7 +31,6 @@ public class Main {
         System.out.println();
 
         listIterator2 = list2.listIterator();
-        Integer i = listIterator2.next();
-        System.out.println(i);
+       listIterator2.forEachRemaining(System.out::print);
     }
 }
