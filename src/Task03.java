@@ -5,14 +5,15 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Task03 {
     public static void main(String[] args) throws IOException {
-        Stream<String> streamFromFiles = Files.lines(Paths.get("src/Lhrn.txt"));
-        System.out.println(streamFromFiles.collect(Collectors.toList()));
-        Collection<String> collection = Arrays.asList("1,2,0", "4,5");
-
-        System.out.println(Arrays.toString(collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new)));
+        IntStream chars = "4521".chars();
+        //System.out.println(chars.count());
+        //System.out.println((char) chars.min().getAsInt());
+        //System.out.println((char)chars.max().getAsInt());
+        System.out.println(chars.map((c) -> Character.getNumericValue(c)).sum());
     }
 }
