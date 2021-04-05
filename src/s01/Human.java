@@ -29,13 +29,13 @@ public class Human {
         System.out.println(humans.stream().mapToInt((o) -> Integer.valueOf(o.age)).sum());
         System.out.println(humans.stream().filter((x) -> x.age < 50).collect(Collectors.toList()));
         System.out.println(humans.stream().filter((x) -> x.weight < 50).collect(Collectors.toList()));
-        System.out.println(humans.stream().map((x) -> x.firstName + "").collect(Collectors.toList()));// TODO: 03.04.2021 не могу убрать запятые
+        humans.stream().map((x) -> x.firstName + " ").forEach(System.out::print);
         System.out.println(humans.stream().sorted((o1, o2) -> Integer.compare(-o1.weight, o2.weight)).collect(Collectors.toList()));
         System.out.println(humans.stream().filter(x -> !x.lastName.equals("Ivanov")).collect(Collectors.toList()));
         //System.out.println(humans.stream().mapToInt((x) -> Integer.valueOf(x.age) * 1)); не могу вывести инт произвед в соут
         System.out.println(humans.stream().sorted(Comparator.comparing((x)-> x.firstName.charAt(1))).collect(Collectors.toList()));
         // тут нужно сделать из задания 4 сортировку по весу.
-        System.out.println(humans.stream().sorted((x, y) -> x.age * y.weight).collect(Collectors.toList()));// TODO: 04.04.2021 не выводится сортировка произвед.
+        System.out.println(humans.stream().sorted((x, y) -> Integer.compare( x.age * x.weight, y.age * y.weight)).collect(Collectors.toList()));
     }
 
 
