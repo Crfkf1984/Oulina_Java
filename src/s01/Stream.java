@@ -17,6 +17,6 @@ public class Stream {
          System.out.println(arrayList.stream().distinct().collect(Collectors.toList()));
          System.out.println(arrayList.stream().distinct().limit(2).collect(Collectors.toList()));
           arrayList.stream().distinct().filter(x -> x.length() > 5).forEach(System.out::println);
-          System.out.println(arrayList.stream().map(String::toUpperCase).collect(Collectors.toList()));
+        System.out.println(arrayList.stream().map(s -> s.substring(0, 1).toUpperCase() + s.substring(1)).collect(Collectors.toList()));
     }
 }
