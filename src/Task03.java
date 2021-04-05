@@ -13,6 +13,7 @@ public class Task03 {
         IntStream chars = "4521".chars();
         //System.out.println(chars.count());
         //System.out.println((char) chars.min().getAsInt());
-        System.out.println((char) chars.max().getAsInt());
+        //System.out.println((char)chars.max().getAsInt());
+        System.out.println(chars.map((c) -> Character.getNumericValue(c)).sum());
     }
 }
