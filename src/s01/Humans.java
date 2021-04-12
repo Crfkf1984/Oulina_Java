@@ -31,10 +31,10 @@ public class Humans {
         System.out.println(humans.stream().mapToInt((o) -> Integer.valueOf(o.age)).sum());
 
         System.out.println(humans.stream().filter((x) -> x.age < 50).collect(Collectors.toList()));
-        System.out.println(humans.stream().filter((x) -> x.weight < 50).collect(Collectors.toList()));
+        System.out.println(humans.stream().sorted(Comparator.comparing(x -> x.weight)).collect(Collectors.toList()));
         humans.stream().map((x) -> x.firstName + " ").forEach(System.out::print);
 
-        System.out.println(humans.stream().sorted((o1, o2) -> Integer.compare(-o1.weight, o2.weight)).collect(Collectors.toList()));
+        System.out.println(humans.stream().sorted(Comparator.comparing((x) -> - x.weight)).collect(Collectors.toList()));
         System.out.println(humans.stream().filter(x -> !x.lastName.equals("Ivanov")).collect(Collectors.toList()));
        System.out.println(humans.stream().map((x) -> x.age).reduce((x, y) -> x.intValue() * y.intValue()).get());
 
@@ -55,7 +55,7 @@ public class Humans {
 
         humans.stream().sorted(Comparator.comparing(t ->  t.firstName.substring(t.firstName.length() - 1)) ).forEach(System.out::print);
         humans.stream().mapToInt((x) -> x.age + 3).forEach(System.out::println);
-        humans.stream().mapToInt((x) -> x.age).average().getAsDouble();
+        System.out.println(humans.stream().mapToInt((x) -> x.age).average().getAsDouble());
 
         System.out.println(humans.stream().filter((x) -> x.weight > x.age).collect(Collectors.toList()));
         System.out.println(humans.stream().sorted((t, x) -> - t.lastName.compareTo(x.lastName)).collect(Collectors.toList()));
